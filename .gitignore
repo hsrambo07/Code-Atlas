@@ -69,3 +69,18 @@ next-env.d.ts
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+prisma/atlas.db
+prisma/prisma/atlas.db
+
+# Vector database and uploads
+chroma_data/
+uploads/
+
+# Test files
+test-project/
+test-project.zip
