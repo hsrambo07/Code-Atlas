@@ -30,8 +30,20 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# Environment variables - comprehensive patterns
+.env
+.env.*
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+.environment
+*.env
+environment.js
+environment.ts
+config.env
+.envrc
 
 # vercel
 .vercel
@@ -41,3 +53,19 @@ yarn-error.log*
 next-env.d.ts
 
 /src/generated/prisma
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
