@@ -1,0 +1,75 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./prisma/atlas.db"
+}
+
+model File {
+  id       String     @id @default(cuid())
+  path     String     @unique
+  lang     String
+  size     Int
+  summary  String?
+  functions Function[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Folder {
+  id        String   @id @default(cuid())
+  path      String   @unique
+  summary   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Function {
+  id       String  @id @default(cuid())
+  fileId   String
+  name     String
+  start    Int
+  end      Int
+  summary  String?
+  file     File    @relation(fields: [fileId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([fileId])
+  @@unique([fileId, name, start])
+}
+
+model CallEdge {
+  id   String @id @default(cuid())
+  from String
+  to   String
+  createdAt DateTime @default(now())
+
+  @@unique([from, to])
+}
+
+model ImportEdge {
+  id   String @id @default(cuid())
+  from String
+  to   String
+  createdAt DateTime @default(now())
+
+  @@unique([from, to])
+}
+
+model Job {
+  id        String   @id @default(cuid())
+  status    String   // "pending", "processing", "completed", "failed"
+  message   String?
+  extractPath String? // Path to extracted files
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

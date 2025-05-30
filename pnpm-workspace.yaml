@@ -1,0 +1,14 @@
+onlyBuiltDependencies:
+  - '@prisma/client'
+  - '@prisma/engines'
+  - better-sqlite3
+  - prisma
+  - protobufjs
+  - sharp
+  - tree-sitter
+  - tree-sitter-go
+  - tree-sitter-java
+  - tree-sitter-javascript
+  - tree-sitter-python
+  - tree-sitter-rust
+  - tree-sitter-typescript

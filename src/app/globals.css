@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* React Flow dark mode customizations */
+.dark .react-flow__controls {
+  @apply bg-gray-800 border-gray-700;
+}
+
+.dark .react-flow__controls button {
+  @apply bg-gray-800 border-gray-700 text-gray-300 hover:bg-gray-700;
+}
+
+.dark .react-flow__minimap {
+  @apply bg-gray-800 border-gray-700;
+}
+
+.dark .react-flow__background {
+  @apply opacity-20;
+}
+
+/* Custom scrollbar for dark mode */
+.dark::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+.dark::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded;
+}
+
+.dark::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}

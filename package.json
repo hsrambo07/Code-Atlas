@@ -1,0 +1,46 @@
+{
+  "name": "code-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "chroma": "./scripts/start-chroma.sh"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.8.2",
+    "@types/adm-zip": "^0.5.7",
+    "@types/uuid": "^10.0.0",
+    "adm-zip": "^0.5.16",
+    "better-sqlite3": "^11.10.0",
+    "chromadb": "^2.4.6",
+    "next": "15.3.2",
+    "openai": "^4.103.0",
+    "prisma": "^6.8.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "reactflow": "^11.11.4",
+    "tree-sitter": "^0.22.4",
+    "tree-sitter-go": "^0.23.4",
+    "tree-sitter-java": "^0.23.5",
+    "tree-sitter-javascript": "^0.23.1",
+    "tree-sitter-python": "^0.23.6",
+    "tree-sitter-rust": "^0.24.0",
+    "tree-sitter-typescript": "^0.23.2",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.2",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.4",
+    "typescript": "^5"
+  }
+}
